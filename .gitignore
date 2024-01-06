@@ -1,0 +1,9 @@
+.DS_Store
+.env
+
+dist/
+papers/
+resources/
+
+# for URLs to the models used check the README.md
+models/
