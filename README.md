@@ -1,4 +1,4 @@
-# Drives Drowsiness Detection
+# Drowsiness Detection System
 This project offers the following features:
 - At startup calibration of the eyes is performed to determine the threshold for the eyes to be considered closed.
 - The program is able to detect the eyes of the driver and determine if they are closed or open.
