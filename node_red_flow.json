@@ -1,0 +1,363 @@
+[
+    {
+        "id": "2c043ffbc3fe36b5",
+        "type": "tab",
+        "label": "MT-PROJEKT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "cf24e913461a8841",
+        "type": "mqtt in",
+        "z": "2c043ffbc3fe36b5",
+        "name": "",
+        "topic": "/LUCAMI/RP07/ONLINE/",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "ce7bdd01fd40c02b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 140,
+        "wires": [
+            [
+                "1d08d503dfde9e7a",
+                "25b4db6cdf08fd7c"
+            ]
+        ]
+    },
+    {
+        "id": "1d08d503dfde9e7a",
+        "type": "delay",
+        "z": "2c043ffbc3fe36b5",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 400,
+        "y": 180,
+        "wires": [
+            [
+                "d84efccacaad3854"
+            ]
+        ]
+    },
+    {
+        "id": "d84efccacaad3854",
+        "type": "change",
+        "z": "2c043ffbc3fe36b5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "0",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 180,
+        "wires": [
+            [
+                "120d1ae0965b8936"
+            ]
+        ]
+    },
+    {
+        "id": "120d1ae0965b8936",
+        "type": "delay",
+        "z": "2c043ffbc3fe36b5",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "5",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "10",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 180,
+        "wires": [
+            [
+                "e9b22c47885f22ed"
+            ]
+        ]
+    },
+    {
+        "id": "25b4db6cdf08fd7c",
+        "type": "change",
+        "z": "2c043ffbc3fe36b5",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "1",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "e9b22c47885f22ed"
+            ]
+        ]
+    },
+    {
+        "id": "e9b22c47885f22ed",
+        "type": "ui_gauge",
+        "z": "2c043ffbc3fe36b5",
+        "name": "",
+        "group": "dae0b6553fc7ee12",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Online",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#ca3838",
+            "#e6e600",
+            "#00b500"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 990,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "673712f815a5cc7f",
+        "type": "mqtt in",
+        "z": "2c043ffbc3fe36b5",
+        "name": "",
+        "topic": "/LUCAMI/RP07/FACE/",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "ce7bdd01fd40c02b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 320,
+        "wires": [
+            [
+                "af7508bdaf741f0b",
+                "fb2c4a82b9ceb078",
+                "56fcd5449af97ea4"
+            ]
+        ]
+    },
+    {
+        "id": "af7508bdaf741f0b",
+        "type": "debug",
+        "z": "2c043ffbc3fe36b5",
+        "name": "debug 22",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 460,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "7012d6a3cdc09a0c",
+        "type": "ui_chart",
+        "z": "2c043ffbc3fe36b5",
+        "name": "",
+        "group": "dae0b6553fc7ee12",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Odprtost oči",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "30",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 790,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "13a5503cb8fc5b8c",
+        "type": "ui_gauge",
+        "z": "2c043ffbc3fe36b5",
+        "name": "",
+        "group": "dae0b6553fc7ee12",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Zaspan",
+        "label": "",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "1",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 780,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "fb2c4a82b9ceb078",
+        "type": "function",
+        "z": "2c043ffbc3fe36b5",
+        "name": "Get first driver EAR value",
+        "func": "const driver = msg.payload[0];\nlet ear = flow.get('earPrev');\nif (driver) {\n    ear = driver[0];\n    flow.set('earPrev', ear);\n}\nmsg.payload = ear;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 470,
+        "y": 400,
+        "wires": [
+            [
+                "7012d6a3cdc09a0c"
+            ]
+        ]
+    },
+    {
+        "id": "56fcd5449af97ea4",
+        "type": "function",
+        "z": "2c043ffbc3fe36b5",
+        "name": "Get first driver drowsiness status",
+        "func": "const driver = msg.payload[0];\nlet drowsy = 0;\nif (driver) {\n    drowsy = driver[1];\n}\nmsg.payload = drowsy;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 500,
+        "y": 480,
+        "wires": [
+            [
+                "13a5503cb8fc5b8c"
+            ]
+        ]
+    },
+    {
+        "id": "ce7bdd01fd40c02b",
+        "type": "mqtt-broker",
+        "name": "Lucami MQTT",
+        "broker": "rlab.lucami.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dae0b6553fc7ee12",
+        "type": "ui_group",
+        "name": "Voznik",
+        "tab": "5cde4e61a6d05d8c",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "5cde4e61a6d05d8c",
+        "type": "ui_tab",
+        "name": "MT-PROJEKT",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]

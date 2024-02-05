@@ -32,3 +32,7 @@ The `comparisons` folder contains simplified versions of the main program, which
 - `drowsiness_detector_dlib_opencv.py` - uses the dlib face detector and the OpenCV facial landmark detector.
 - `drowsiness_detector_vj_dlib.py` - uses the OpenCV Viola-Jones face detector and the dlib facial landmark detector.
 - `drowsiness_detector_vj_opencv.py` - uses the OpenCV Viola-Jones face detector and the OpenCV facial landmark detector.
+
+## Node-RED Flow
+The `node_red_flow.json` file contains the Node-RED flow for the dashboard. The flow is used to display the data sent by the program to the MQTT broker.
+The dashboard represents the operator's view of all the drivers and their drowsiness status.
