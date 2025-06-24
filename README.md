@@ -1,5 +1,10 @@
+This repository contains my project for the course **Multimedia Terminals** of year (2023/2024).
+
 # Drowsiness Detection System
-This project offers the following features:
+The system uses a webcam and Sense HAT (LED matrix + joystick + sensors) to monitor a driver’s eye aspect ratio (EAR) and alert for signs of drowsiness.
+Real-time status and alerts are shown on both the video feed and the physical LED matrix, with live data also sent to a remote Node-RED dashboard via MQTT.
+
+## Key features
 - At startup calibration of the eyes is performed to determine the threshold for the eyes to be considered closed.
 - The program is able to detect the eyes of the driver and determine if they are closed or open.
 - If the eyes are closed for more than cca. 2 seconds, the driver will be alerted.
@@ -36,3 +41,10 @@ The `comparisons` folder contains simplified versions of the main program, which
 ## Node-RED Flow
 The `node_red_flow.json` file contains the Node-RED flow for the dashboard. The flow is used to display the data sent by the program to the MQTT broker.
 The dashboard represents the operator's view of all the drivers and their drowsiness status.
+
+## Skills
+- Embedded computer vision with hardware feedback (Raspberry Pi + Sense HAT)
+- IoT communication (MQTT, Node-RED dashboard)
+- Human-computer interaction and real-time alert systems
+- Model benchmarking and system optimization on edge devices
+- Python programming
